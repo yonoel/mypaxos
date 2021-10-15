@@ -1,8 +1,11 @@
 package com.study.mypaxos
 
+import com.study.mypaxos.message.AcceptRequest
+import com.study.mypaxos.message.PrepareRequest
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.assertThrows
 import org.springframework.beans.factory.annotation.Autowired
 
 /**
@@ -21,18 +24,43 @@ internal class ApiControllerTest : MypaxosApplicationTests() {
     }
 
     @Test
+    fun sendPrepareRequest() {
+        val prepareRequest = apiController.sendPrepareRequest()
+        println(prepareRequest)
+    }
+
+
+    @Test
     fun prepareReply() {
         val prepareRequest = PrepareRequest("a", "20125451214541")
         apiController.prepareReply(prepareRequest)
-        assertThrows  (DomainException::class.java){
+        assertThrows(DomainException::class.java) {
             apiController.prepareReply(prepareRequest)
 
         }
     }
 
+
     @Test
-    fun sendPrepareRequest() {
-        val prepareRequest = apiController.sendPrepareRequest()
-        println(prepareRequest)
+    fun acceptReply() {
+        assertThrows<DomainException> {
+            apiController.acceptReply(AcceptRequest("a", "12345", "abc"))
+        }
+    }
+
+    @Test
+    fun acceptReply2() {
+        apiController.paxosValue = "va"
+        apiController.lastProposer = PrepareRequest("a", "123456")
+        apiController.acceptReply(AcceptRequest("a", "12345", "abc"))
+    }
+
+    @Test
+    fun acceptReply3() {
+        assertThrows<DomainException> {
+            apiController.lastProposer = PrepareRequest("a", "123456")
+            apiController.acceptReply(AcceptRequest("a", "12345", "abc"))
+        }
+
     }
 }
