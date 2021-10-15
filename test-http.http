@@ -1,0 +1,2 @@
+### paxos/setValue
+GET http://localhost:8080/api/client-call/setValue

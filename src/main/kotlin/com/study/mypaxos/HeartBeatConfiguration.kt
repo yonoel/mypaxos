@@ -23,7 +23,7 @@ class HeartBeatConfiguration {
         //初始化服务器ID和配置ID
         val id = SecureRandom().nextInt(1 shl 24)
         var configId = 1
-        return ServerConfigDTO(environment.getProperty("server.address")!!, id.toString(), configId)
+        return ServerConfigDTO("127.0.0.1:${environment.getProperty("server.port")}", id.toString(), configId)
     }
 
 }
