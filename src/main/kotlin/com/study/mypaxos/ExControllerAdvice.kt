@@ -1,4 +1,4 @@
-package com.study.mypaxos.basic
+package com.study.mypaxos
 
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RestControllerAdvice

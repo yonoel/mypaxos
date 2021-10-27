@@ -1,4 +1,4 @@
-package com.study.mypaxos.basic
+package com.study.mypaxos
 
 import lombok.Data
 
