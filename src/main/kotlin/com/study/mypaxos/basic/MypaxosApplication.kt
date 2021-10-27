@@ -1,4 +1,4 @@
-package com.study.mypaxos
+package com.study.mypaxos.basic
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

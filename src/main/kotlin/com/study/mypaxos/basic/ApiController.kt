@@ -1,10 +1,10 @@
-package com.study.mypaxos
+package com.study.mypaxos.basic
 
 import com.squareup.moshi.Moshi
-import com.study.mypaxos.message.AcceptRequest
-import com.study.mypaxos.message.ClusterConfig
-import com.study.mypaxos.message.PrepareRequest
-import com.study.mypaxos.message.ServerConfig
+import com.study.mypaxos.basic.message.AcceptRequest
+import com.study.mypaxos.basic.message.ClusterConfig
+import com.study.mypaxos.basic.message.PrepareRequest
+import com.study.mypaxos.basic.message.ServerConfig
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationContext
 import org.springframework.core.env.Environment

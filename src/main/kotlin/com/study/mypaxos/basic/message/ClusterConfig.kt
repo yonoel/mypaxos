@@ -1,4 +1,4 @@
-package com.study.mypaxos.message
+package com.study.mypaxos.basic.message
 
 import lombok.Getter
 import lombok.Setter

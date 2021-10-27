@@ -1,4 +1,4 @@
-package com.study.mypaxos
+package com.study.mypaxos.basic
 
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RestControllerAdvice
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice
 class ExControllerAdvice {
 
     @ExceptionHandler(DomainException::class)
-    fun String(ex:DomainException){
+    fun String(ex: DomainException){
         println(ex.message)
     }
 }

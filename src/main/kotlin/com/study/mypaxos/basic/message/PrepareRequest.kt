@@ -1,7 +1,7 @@
-package com.study.mypaxos.message
+package com.study.mypaxos.basic.message
 
 import com.squareup.moshi.JsonClass
-import com.study.mypaxos.DomainException
+import com.study.mypaxos.basic.DomainException
 
 /**
  *

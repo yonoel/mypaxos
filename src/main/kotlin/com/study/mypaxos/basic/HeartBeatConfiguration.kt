@@ -1,6 +1,6 @@
-package com.study.mypaxos
+package com.study.mypaxos.basic
 
-import com.study.mypaxos.message.ServerConfig
+import com.study.mypaxos.basic.message.ServerConfig
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

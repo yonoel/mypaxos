@@ -1,7 +1,7 @@
-package com.study.mypaxos
+package com.study.mypaxos.basic
 
-import com.study.mypaxos.message.AcceptRequest
-import com.study.mypaxos.message.PrepareRequest
+import com.study.mypaxos.basic.message.AcceptRequest
+import com.study.mypaxos.basic.message.PrepareRequest
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
