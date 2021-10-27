@@ -1,5 +1,6 @@
 # MyPaxos
 
+## basic paxos
 自己实现的basic paxos算法
 
 心跳超时时间: 60S
@@ -8,8 +9,12 @@
 项目启动时都是acceptor，通过心跳获取集群里的配置，并且持久化配置。
 
 ![img.png](img.png)
+### 优势
 
-## 缺陷
+1. 无主，没有选举的延迟
+2. 通过paxos可以实现强一致性
+
+### 缺陷
 
 1. paxos的服务节点需要知道quorum是多少？需要广播配置，或者一个中心来告诉配置。
 2. 只有proposer知道哪个值被选中，所有响应accept的服务器的确也都有值，但是不知道该值有没有被选中
@@ -20,3 +25,13 @@
 
 https://www.yuque.com/docs/share/61ee0856-f3c4-4549-bba9-49c5d639ceec?# 《Paxos lecture》
 https://www.yuque.com/docs/share/32daedce-f2cc-4583-a2b1-f6ef4588a7b2?# 《The Paxos algorithm》
+
+## multi-paxos
+
+目的：实现多副本冗余系统(multi-replicated log)
+
+paxos通过多轮prepare/accept来确定一个值，将这个过程称为paxos的实例。
+
+方式：使用一组彼此独立的paxos实例，每个basic paxos的实例来决定log中的一条记录，因此需要给prepare和accept增加一个参数，index，用来表示这个basic paxos在决策哪一条log。而状态机必须按步骤一步步执行log。
+
+

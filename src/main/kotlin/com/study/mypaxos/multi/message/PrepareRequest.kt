@@ -1,15 +1,16 @@
-package com.study.mypaxos.basic.message
+package com.study.mypaxos.multi.message
 
 import com.squareup.moshi.JsonClass
 import com.study.mypaxos.DomainException
 
 /**
  *
+ * index指的是replicated-log里的index
  * @author yonoel
  * @version 2021/10/13
  */
 @JsonClass(generateAdapter = true)
-class PrepareRequest(val nodeId:String,val proposerId:String) {
+class PrepareRequest(val nodeId:String,val proposerId:String,val index:String) {
 
     fun isSelfBigThanInput(id:Long):Boolean = this.proposerId.toLong() > id
     fun compareProposer(accept: AcceptRequest) {

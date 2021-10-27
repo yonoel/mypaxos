@@ -1,5 +1,6 @@
 package com.study.mypaxos.basic
 
+import com.study.mypaxos.DomainException
 import com.study.mypaxos.basic.message.AcceptRequest
 import com.study.mypaxos.basic.message.PrepareRequest
 import org.junit.jupiter.api.Test

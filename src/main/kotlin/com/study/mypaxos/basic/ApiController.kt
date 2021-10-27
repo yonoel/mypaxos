@@ -1,6 +1,7 @@
 package com.study.mypaxos.basic
 
 import com.squareup.moshi.Moshi
+import com.study.mypaxos.DomainException
 import com.study.mypaxos.basic.message.AcceptRequest
 import com.study.mypaxos.basic.message.ClusterConfig
 import com.study.mypaxos.basic.message.PrepareRequest
