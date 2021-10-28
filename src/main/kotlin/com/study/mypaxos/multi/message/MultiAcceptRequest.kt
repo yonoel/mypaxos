@@ -8,5 +8,10 @@ import com.squareup.moshi.JsonClass
  * @version 2021/10/15
  */
 @JsonClass(generateAdapter = true)
-class AcceptRequest(val nodeId:String,val proposerId:String,val value:String) {
-}
+ class MultiAcceptRequest(
+    val nodeId: String,
+    val proposerId: Int,
+    val index: Int,
+    val value: String,
+    val firstUnchosenIndex: Int
+)
